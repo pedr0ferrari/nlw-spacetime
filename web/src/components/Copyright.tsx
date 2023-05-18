@@ -6,7 +6,7 @@ export const Copyright = () => {
         target="_blank"
         rel="noreferrer"
         className="underline hover:text-gray-100"
-        href="https://rocketseat.com.br"
+        href="http://rocketseat.com.br"
       >
         Rocketseat
       </a>
