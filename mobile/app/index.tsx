@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar'
-import { ImageBackground, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import * as SecureStore from 'expo-secure-store';
 import { useRouter } from "expo-router";
 
@@ -11,18 +10,12 @@ import {
 
 import { BaiJamjuree_700Bold } from '@expo-google-fonts/bai-jamjuree'
 
-import blurBg from "../src/assets/bg-blur.png"
-import Stripes from '../src/assets/stripes.svg'
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg'
 import { api } from '../src/lib/api'
-import { styled } from 'nativewind'
 import { useAuthRequest } from 'expo-auth-session/build/AuthRequestHooks'
 import { makeRedirectUri } from 'expo-auth-session'
 import { useEffect } from 'react'
 
-
-
-const StyledStripes = styled(Stripes)
 
 const discovery = {
   authorizationEndpoint: 'https://github.com/login/oauth/authorize',
@@ -82,13 +75,7 @@ const router = useRouter()
   }
 
   return (
-    <ImageBackground
-      source={blurBg}
-      className="relative items-center flex-1 px-8 py-10 bg-gray-900"
-      imageStyle={{ position: 'absolute', left: '-100%' }}
-    >
-      <StyledStripes className="absolute left-2" />
-
+    <View className="items-center flex-1 px-8 py-10 ">
       <View className="items-center justify-center flex-1 gap-6">
         <NLWLogo />
 
@@ -117,7 +104,7 @@ const router = useRouter()
         Feito com 💜 no NLW da Rocketseat
       </Text>
 
-      <StatusBar style="light" translucent />
-    </ImageBackground>
+      
+    </View>
   )
 }
